@@ -1,0 +1,63 @@
+body {
+    /* overflow-y: hidden; */
+    background: url("flack-bg.png");
+}
+.pusher .mobile-nav .menu a.toc {
+  display: none;
+}
+.ui.vertical.menu > .logo {
+  display: none;
+}
+
+@media only screen and (min-width: 992px) {
+  /* body {
+      overflow: hidden;        
+  }     */
+ .pusher .ui #chat-box {
+     width: 600px;
+     overflow-x: hidden;
+     margin: 0 auto;
+     height: auto;       
+ }
+ .pusher .ui .header h2 {
+  margin-top: 20px;
+ }
+ .pusher .main .mainBody {
+     margin-top: 100px;
+     padding-top: 100px;
+ }
+}
+
+@media only screen and (max-width: 700px) {
+  /* .ui.fixed.menu {
+    display: none !important;
+  }
+  .secondary.pointing.menu .item,
+  .secondary.pointing.menu .menu {
+    display: none;
+  } */
+  .secondary.pointing.menu .toc.item {
+    display: block;
+  }
+  .ui.hidden.menu {
+    display: none;
+  } 
+  /* .pusher .mobile-nav .menu {
+      display: block !important;
+  }
+  .pusher .ui .main .column{
+      margin:0px !important;
+      padding: 0px !important;
+  } */
+  .pusher .mobile-nav .menu a.toc {
+    display: block;
+  }
+ .ui.vertical.menu > .item:first-child {
+    display: block;
+  }
+  /* .pusher .mobile-nav .top .menu {
+    padding: 0px !important;
+    margin: 0px !important;
+  } */
+  
+}

@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block head %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('.pusher .main .mainBody').style.paddingTop = '90px';
+        document.querySelector('.pusher .ui .column .vertical').style.paddingTop = '52px';
+    });
+</script>
+{% endblock %}
+
+{% block body %}
+<div class="ui vertical mainsidebar sidebar pointing menu" style="border-radius: 0px; border-top: 0px;">
+    <div class="header item logo">
+            <img class="ui image" src="{{ url_for('static', filename='logo.png') }}" height="35px;" width="auto;">
+        </div>
+        <div class="item">
+            <div class="content">
+                <i class="user icon"></i> alisani081                             
+            </div>
+        </div>
+        <div class="item">
+            <div class="ui input"><input type="text" placeholder="Search..."></div>
+        </div>
+        <div class="item">
+            Channels <i class="plus circle icon" title="Create Channel" style="cursor: pointer;"></i>
+            <div class="menu">
+                <div class="channel">
+                    <a class="item"># Channel 1</a>
+                </div>
+                <a class="item"># Channel 2</a>
+                <a class="item"># Channel 3</a>
+            </div>
+        </div>
+        <a class="item">
+            <i class="plus circle icon" title="Create Channel" style="cursor: pointer;"></i> Direct Messages
+        </a>
+        <a class="item">
+            Logout
+        </a>  
+        <a class="item"></a>      
+    </div>
+
+<!-- Page Contents -->
+<div class="pusher">  
+    <!-- Mobile Nav --> 
+    <div class="ui mobile-nav">
+        <div class="ui top fixed menu" style="border-radius: 0px;">
+            <a class="toc item">
+                <i class="sidebar icon"></i>
+            </a>
+            <div class="item">
+                <img class="ui image" src="{{ url_for('static', filename='logo.png') }}" height="27px;" width="auto;">
+            </div>
+            <div class="right menu">  
+                <a class="item">Logout</a>
+            </div>
+        </div>
+    </div> 
+    <div class="ui grid main">  
+        <div class="three wide column">
+            <div class="ui hidden vertical menu" style="border-radius: 0px; height: 657px;">
+                <div class="header item logo">
+                    <img class="ui image" src="{{ url_for('static', filename='logo.png') }}" height="35px;" width="auto;">
+                </div>
+                <div class="item">
+                    <div class="content">
+                        <i class="user icon"></i> alisani081                             
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="ui input"><input type="text" placeholder="Search..."></div>
+                </div>
+                <div class="item">
+                    Channels <i class="plus circle icon" title="Create Channel" style="cursor: pointer;"></i>
+                    <div class="menu">
+                        <div class="channel">
+                            <a class="item"># Channel 1</a>
+                        </div>
+                        <a class="item"># Channel 2</a>
+                        <a class="item"># Channel 3</a>
+                    </div>
+                </div>
+                <a class="item">
+                    <i class="plus circle icon" title="Create Channel" style="cursor: pointer;"></i> Direct Messages
+                </a>
+                <a class="item">
+                    Logout
+                </a>  
+                <a class="item"></a>      
+            </div>
+        </div>      
+        <div class="ui twelve wide computer column mobile sixteen wide padded grid mainBody">   
+            {% block menu %}
+            {% endblock %}
+
+            {% block pageHeader %}{% endblock %}
+            
+            <div id="pageContent" style="padding-top: 20px;">                                
+                {% block pageContent %} {% endblock %}
+            </div>
+        </div>  
+    </div>     
+</div>
+
+<script>
+$(document)
+    .ready(function() {
+
+      // create sidebar and attach to menu open
+      $('.ui.mainsidebar')
+        .sidebar('attach events', '.toc.item')
+      ;
+
+    })
+  ;
+</script>
+{% endblock %}

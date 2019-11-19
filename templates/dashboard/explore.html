@@ -1,0 +1,56 @@
+{% extends "dashboard/layout.html" %}
+
+{% block menu %}
+<div class="ui grid">
+    <div class="ui fluid three item labeled icon menu" id="tab-menu" style="border-radius: 0px;">
+        <a class="item" href="{{ url_for('create') }}">
+            <i class="plus circle icon"></i>
+            Create Channel
+        </a>
+        <a class="item" href="{{ url_for('view') }}">
+            <i class="eye icon"></i>
+            My Channels
+        </a>
+        <a class="active item" href="{{ url_for('explore') }}">
+            <i class="compass icon"></i>
+            Explore Channels
+        </a>
+    </div>
+</div>   
+{% endblock %}
+
+{% block pageHeader %}
+<div class="ui header center aligned">
+    <h2>Browse Channels</h2>
+</div>
+{% endblock %}
+
+{% block pageContent %}
+<!-- Explore/Browse Channel  -->
+<div class="ui three stackable cards">                 
+    <div class="ui fluid link card">        
+        <div class="content">
+            <div class="header">Sani Abdulkadir Forum</div> 
+            <div class="meta">
+                <span class="date">Created by <a href="#">tjyusuf</a></span>
+            </div>                       
+            <div class="description">
+                The Sani Abdulkadir Family Channel
+            </div>
+        </div>
+        <div class="extra content">
+            <span class="right floated">
+                Created in 2019
+            </span>
+            <span>
+                <i class="user icon"></i>
+                75 Members
+            </span>
+        </div>
+        <div class="ui bottom attached positive button">
+            <i class="add icon"></i>
+            Join
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %} Signup  {% endblock %}
+{% block head %}
+<style type="text/css">   
+    body {
+        background: url('static/flack-bg.png') !important;
+    }
+     
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="ui middle aligned center aligned grid" style="height: 100%;">
+    <div class="column" style="max-width: 450px;">
+        <div class="ui card fluid" style="padding:20px; border-radius:0px">
+            <div class="content">
+                <img class="ui image" src="{{ url_for('static', filename='logo.png') }}" height="35px;" width="auto;">
+                <div class="description" style="padding: 10px;">
+                    Create your free account...
+                </div>
+                <div class="ui divider"></div>
+                <div class="column">
+                    <form class="ui form"> 
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <input type="text" name="username" placeholder="Username">
+                                <i class="user icon"></i>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <input type="password" name="password" placeholder="Password">
+                                <i class="lock icon"></i>
+                            </div>                                
+                        </div>                            
+                            <button class="ui fluid positive submit button">Sign Up</button>                                                                         
+                    </form>
+                    <div class="ui horizontal divider">OR</div>                        
+                        <div class="description">
+                                Already have an account? <a href="{{ url_for('login') }}">Login</a>                               
+                        </div> 
+                </div>                    
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

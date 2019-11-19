@@ -1,0 +1,97 @@
+{% extends "dashboard/layout.html" %}
+
+{% block pageHeader %}
+<div class="ui header center aligned">
+    <h2>Sani Abdulkadir Forum</h2>  
+</div>
+<div class="ui horizontal divider" style="text-transform: none;">Created by alisani081</div>
+<div class="content ui center aligned padded grid">    
+    <div class="ui label">
+        <i class="user icon"></i> 75 Members
+    </div>        
+    <div class="ui label">
+        <i class="calendar icon"></i> 10 Nov. 2019
+    </div>   
+</div>
+
+{% endblock %}
+
+{% block pageContent %}
+<div class="ui fluid card" id="chat-box">
+    <div class="content">
+        <div class="right floated meta">
+            <button class="mini ui red basic button">
+                <!-- <i class="trash alternate outline icon"></i> -->
+                Leave Channel
+            </button>
+        </div>
+        <img class="ui avatar image" src="{{ url_for('static', filename='flack-bg.png') }}"> Sani Abdulkadir Forum       
+    </div>
+
+    <div class="content" style="max-height: 450px; overflow-x: scroll; background: url('http://127.0.0.1:5000/static/chat-bg-2.png');">
+        <div class="left floated">                   
+            <div class="ui fluid card other-msg">
+                <div class="content">
+                    <p style="padding-top: 13px;">This is a simple text message. This is a simple text message. This is a simple text message</p>
+                    <div class="ui top left attached tiny label">
+                        <i class="user icon"></i>
+                        alisani081
+                    </div>
+                    <div class="ui bottom right attached mini label">11:20pm</div>
+                </div>
+            </div>
+            <div class="ui card">
+                <div class="content">
+                    <p style="padding-top: 13px;">Yeah, I will try.</p>
+                    <div class="ui top left attached tiny label">
+                        <i class="user icon"></i>
+                        tjyusuf
+                    </div>
+                    <div class="ui bottom right attached mini label">11:20pm</div>
+                </div>
+            </div>
+        </div> 
+        <div class="right floated" style="margin-top: 13px;">                   
+            <div class="ui card">
+                <div class="content">
+                    <p style="padding-top: 13px;">This is a simple text message. This is a simple text message. This is a simple text message</p>
+                    <div class="ui top left attached tiny label">
+                        <i class="user icon"></i>
+                        You
+                    </div>
+                    <div class="ui bottom right attached mini label">11:20pm</div>
+                </div>
+            </div>
+            <div class="ui card">
+                <div class="content">
+                    <p style="padding-top: 13px;">Yeah, I will try.</p>
+                    <div class="ui top left attached tiny label">
+                        <i class="user icon"></i>
+                        You
+                    </div>
+                    <div class="ui bottom right attached mini label">11:20pm</div>
+                </div>
+            </div>
+            <div class="ui card">
+                    <div class="content">
+                        <p style="padding-top: 13px;">This is a simple text message. This is a simple text message. This is a simple text message</p>
+                        <div class="ui top left attached tiny label">
+                            <i class="user icon"></i>
+                            You
+                        </div>
+                        <div class="ui bottom right attached mini label">11:20pm</div>
+                    </div>
+                </div>
+         </div>                  
+    </div>
+    <div class="extra content">
+        <div class="ui large transparent fluid icon input">
+            <input type="text" placeholder="Type your message..." autofocus>
+            <a href="#" class="ui circular green icon button">
+                <i class="paper plane icon"></i>                
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

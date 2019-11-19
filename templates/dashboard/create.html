@@ -1,0 +1,51 @@
+{% extends "dashboard/layout.html" %}
+
+{% block menu %}
+<div class="ui grid">
+    <div class="ui fluid three item labeled icon menu" id="tab-menu" style="border-radius: 0px;">
+        <a class="active item" href="{{ url_for('create') }}">
+            <i class="plus circle icon"></i>
+            Create Channel
+        </a>
+        <a class="item" href="{{ url_for('view') }}">
+            <i class="eye icon"></i>
+            My Channels
+        </a>
+        <a class="item" href="{{ url_for('explore') }}">
+            <i class="compass icon"></i>
+            Explore Channels
+        </a>
+    </div>
+</div>   
+{% endblock %}
+
+{% block pageHeader %}
+<div class="ui header center aligned">
+    <h2>Create a channel</h2>
+</div>
+{% endblock %}
+
+{% block pageContent %}
+<!-- Create a Channel Form -->
+<div class="ui card fluid" style="padding:20px" >
+    <div class="content">                        
+        <div class="description" style="padding: 10px;">
+            Channels are where your members communicate.
+        </div>
+        <div class="ui divider"></div>
+        <div class="column">
+            <form class="ui form"> 
+                <div class="field">
+                    <label>Name</label>
+                    <input type="text" name="name" placeholder="Channel Name">
+                </div>
+                <div class="field">
+                    <label>Description <span class="description">(optional)</span></label>
+                    <input type="text" name="description" placeholder="Channel Description">
+                </div>                            
+                <button type="submit" class="ui right floated positive submit button">Create</button>                                                                         
+            </form>                            
+        </div>                    
+    </div>
+</div>
+{% endblock %}
