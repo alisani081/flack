@@ -2,15 +2,15 @@
 
 {% block menu %}
 <div class="ui grid">
-    <div class="ui fluid three item labeled icon menu" id="tab-menu" style="border-radius: 0px;">
+    <div class="ui fluid three item labeled icon menu" id="tab-menu" style="border-radius: 0px;">        
+        <a class="item" href="{{ url_for('index') }}">
+            <i class="hashtag icon"></i>
+            My Channels
+        </a>
         <a class="active item" href="{{ url_for('create') }}">
             <i class="plus circle icon"></i>
             Create Channel
-        </a>
-        <a class="item" href="{{ url_for('view') }}">
-            <i class="eye icon"></i>
-            My Channels
-        </a>
+            </a>
         <a class="item" href="{{ url_for('explore') }}">
             <i class="compass icon"></i>
             Explore Channels
@@ -40,7 +40,7 @@
                     <input type="text" name="name" placeholder="Channel Name">
                 </div>
                 <div class="field">
-                    <label>Description <span class="description">(optional)</span></label>
+                    <label>Description <span style="color: #777777; font-weight: normal;">(optional)</span></label>
                     <input type="text" name="description" placeholder="Channel Description">
                 </div>                            
                 <button type="submit" class="ui right floated positive submit button">Create</button>                                                                         

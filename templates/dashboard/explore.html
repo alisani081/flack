@@ -3,14 +3,14 @@
 {% block menu %}
 <div class="ui grid">
     <div class="ui fluid three item labeled icon menu" id="tab-menu" style="border-radius: 0px;">
+        <a class="item" href="{{ url_for('index') }}">
+            <i class="hashtag icon"></i>
+            My Channels
+        </a>
         <a class="item" href="{{ url_for('create') }}">
             <i class="plus circle icon"></i>
             Create Channel
-        </a>
-        <a class="item" href="{{ url_for('view') }}">
-            <i class="eye icon"></i>
-            My Channels
-        </a>
+        </a>        
         <a class="active item" href="{{ url_for('explore') }}">
             <i class="compass icon"></i>
             Explore Channels
@@ -43,7 +43,7 @@
                 Created in 2019
             </span>
             <span>
-                <i class="user icon"></i>
+                <i class="users icon"></i>
                 75 Members
             </span>
         </div>

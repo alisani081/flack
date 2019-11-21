@@ -18,7 +18,7 @@
         </div>
         <div class="item">
             <div class="content">
-                <i class="user icon"></i> alisani081                             
+                <i class="user icon"></i> {% if session %}{{session.get('username')}}{% endif %}                        
             </div>
         </div>
         <div class="item">
@@ -37,9 +37,7 @@
         <a class="item">
             <i class="plus circle icon" title="Create Channel" style="cursor: pointer;"></i> Direct Messages
         </a>
-        <a class="item">
-            Logout
-        </a>  
+        <a href="{{ url_for('logout') }}" class="item">Logout</a>
         <a class="item"></a>      
     </div>
 
@@ -49,13 +47,13 @@
     <div class="ui mobile-nav">
         <div class="ui top fixed menu" style="border-radius: 0px;">
             <a class="toc item">
-                <i class="sidebar icon"></i>
+                <i class="sidebar large icon"></i>
             </a>
             <div class="item">
                 <img class="ui image" src="{{ url_for('static', filename='logo.png') }}" height="27px;" width="auto;">
             </div>
             <div class="right menu">  
-                <a class="item">Logout</a>
+                <a href="{{ url_for('logout') }}" class="item">Logout</a>
             </div>
         </div>
     </div> 
@@ -67,7 +65,7 @@
                 </div>
                 <div class="item">
                     <div class="content">
-                        <i class="user icon"></i> alisani081                             
+                        <i class="user icon"></i> {% if session %}{{session.get('username')}}{% endif %}                      
                     </div>
                 </div>
                 <div class="item">
@@ -86,13 +84,24 @@
                 <a class="item">
                     <i class="plus circle icon" title="Create Channel" style="cursor: pointer;"></i> Direct Messages
                 </a>
-                <a class="item">
-                    Logout
-                </a>  
+                <a href="{{ url_for('logout') }}" class="item">Logout</a>  
                 <a class="item"></a>      
             </div>
         </div>      
-        <div class="ui twelve wide computer column mobile sixteen wide padded grid mainBody">   
+        <div class="ui twelve wide computer column mobile sixteen wide padded grid mainBody"> 
+            <div class="container" style="margin: 0px 8px 8px 8px;">                 
+                {% with messages = get_flashed_messages(with_categories=True) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="ui fluid {{ category }} padded grid message">
+                            <i class="close icon"></i>                
+                            <p>{{ message }}</p>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}                 
+            </div>
+             
             {% block menu %}
             {% endblock %}
 
